@@ -36,12 +36,13 @@ ul{
     min-height: 100vh;
     display: block;
     opacity: 1;
-}
-.hidden{
-    display: none !important;
-}
-.main-content{
-    padding-left: 270px;
+    margin-left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: auto;
 }
 .padd-15{
     padding-left: 15px;
@@ -624,8 +625,13 @@ h3.my-profession{
     .aside{
         left: -270px;
     }
-    .main-content{
-        padding-left: 0;
+    .aside.open{
+        margin-left: 270px;
+    }
+    .aside .nav-toggler{
+        display: flex;
+        left: 30px;
+    }
     }
     .about .about-content .personal-info .info-item p span{
         display: block;
