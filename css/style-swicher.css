@@ -18,6 +18,9 @@
     transition: all 0.3s ease;
     transform: translateX(100%);
 }
+.style-swicher.open{
+    transform: translateX(-25px);
+}
 .style-swicher .s-icon{
     position: absolute;
     height: 40px;

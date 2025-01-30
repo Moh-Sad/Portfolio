@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <!-- Css Files -->
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/color_1.css">
-    <link rel="stylesheet" href="./css/style-swicher.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Style Swicher -->
+    <link rel="stylesheet" href="./css/color_1.css" class="alternate-style" title="color_1" disabled>
+    <link rel="stylesheet" href="./css/color_2.css" class="alternate-style" title="color_2" disabled>
+    <link rel="stylesheet" href="./css/color_3.css" class="alternate-style" title="color_3" disabled>
+    <link rel="stylesheet" href="./css/color_4.css" class="alternate-style" title="color_4" disabled>
+    <link rel="stylesheet" href="./css/color_5.css" class="alternate-style" title="color_5" disabled>
+    <link rel="stylesheet" href="./css/style-swicher.css">
 </head>
 <body>
     <!-- Main Container -->
@@ -22,24 +29,24 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="" class="active"><i class="fa fa-home" ></i>Home</a></li>
-                    <li><a href=""><i class="fa fa-user" ></i>About</a></li>
-                    <li><a href=""><i class="fa fa-list" ></i>Services</a></li>
-                    <li><a href=""><i class="fa fa-briefcase" ></i>Portfolio</a></li>
-                    <li><a href=""><i class="fa fa-comments" ></i>Contact</a></li>
+                    <li><a href="#home" class="active"><i class="fa fa-home" ></i>Home</a></li>
+                    <li><a href="#about"><i class="fa fa-user" ></i>About</a></li>
+                    <li><a href="#service"><i class="fa fa-list" ></i>Services</a></li>
+                    <li><a href="#portfolio"><i class="fa fa-briefcase" ></i>Portfolio</a></li>
+                    <li><a href="#contact"><i class="fa fa-comments" ></i>Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="main-content">
             <!-- Home Section -->
-            <section class="home section">
+            <section class="home section" id="home">
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
                             <h3 class="hello">Hello, my name is <span class="name">Mohammed Sadik</span></h3>
-                            <h3 class="my-profession">I'm a <span class="typing">web designer</span></h3>
+                            <h3 class="my-profession">I'm a <span class="typing">Web Developer</span></h3>
                             <p>I'm a passionate web designer with professional skills and Expertise. I'm ready to help you at any time.</p>
-                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                            <a href="#about" class="btn hire-me">More About Me</a>
                         </div>
                         <div class="home-img">
                             <img class="shadow-dark" src="./images/My pic.jpg" alt="Profile Image">
@@ -49,15 +56,15 @@
             </section>
 
             <!--  About Section  -->
-            <section class="about section">
+            <section class="about section" id="about">
                 <div class="container">
                     <div class="row">
-                        <div class="section-title padd-15"></div>
+                        <div class="section-title padd-15">
                             <h2>About Me</h2>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="about-content">
+                        <div class="about-content padd-15">
                             <div class="row">
                                 <div class="about-text padd-15">
                                     <h3>I'm Mohammed Sadik a <span>Web Developer</span></h3>
@@ -210,7 +217,7 @@
             </section>
 
             <!--  Service Section  -->
-            <section class="service section">
+            <section class="service section" id="service">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -288,7 +295,7 @@
             </section>
 
             <!-- Portfolio Section -->
-            <section class="portfolio section">
+            <section class="portfolio section" id="portfolio">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -354,7 +361,7 @@
             </section>
 
             <!-- Contact Section -->
-            <section class="contact section padd-15">
+            <section class="contact section" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -381,12 +388,6 @@
                             <div class="icon"><i class="fa fa-envelope"></i></div>
                             <h4>Email</h4>
                             <p>mohsad.7676@gmail.com</p>
-                        </div>
-                        <!-- Contact info item -->
-                        <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
-                            <h4>website</h4>
-                            <p>www.com</p>
                         </div>
                     </div>
                     <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
@@ -440,7 +441,7 @@
             <i class="fas fa-cog fa-spin"></i>
         </div>
         <div class="day-night s-icon">
-            <i class="fas fa-moon"></i>
+            <i class="fas"></i>
         </div>
         <h4>Theme Colors</h4>
         <div class="colors">
@@ -451,6 +452,10 @@
             <span class="color_5" onclick="setActiveStyle('color_5')"></span>
         </div>
     </div>
+
+    <!-- Javascript Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/style-switcher.js"></script>
 </body>
 </html>

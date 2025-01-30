@@ -6,6 +6,13 @@
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 }
+body.dark{
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+}
 body{
     line-height: 1.5;
     font-size: 16px;
@@ -550,8 +557,8 @@ h3.my-profession{
     margin-bottom: 60px;
 }
 .contact .contact-info-item{
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -641,7 +648,7 @@ h3.my-profession{
     }
 }
 @media (max-width: 767px){
-    .contact .contact-form .col-6
+    .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .service .service-item,
