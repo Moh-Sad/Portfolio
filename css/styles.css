@@ -43,6 +43,7 @@ ul{
     z-index: 0;
     overflow-y: auto;
     overflow-x: auto;
+    transition: all 0.3s ease;
 }
 .padd-15{
     padding-left: 15px;
@@ -128,6 +129,7 @@ ul{
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     z-index: 10;
+    transition: all 0.3s ease;
 }
 .aside .logo{
     position: absolute;
@@ -180,6 +182,7 @@ ul{
     top: 20px;
     border-radius: 5px;
     background: var(--bg-black-100);
+    transition: all 0.3s ease;
 }
 .aside .nav-toggler span{
     height: 2px;
@@ -187,6 +190,9 @@ ul{
     background: var(--skin-color);
     display: inline-block;
     position: relative;
+}
+.aside .nav-toggler.open span{
+    background-color: transparent;
 }
 .aside .nav-toggler span::before{
     content: '';
@@ -197,6 +203,10 @@ ul{
     top: -6px;
     left: 0;
 }
+.aside .nav-toggler.open span::before{
+    transform: rotate(45deg);
+    top: 0;
+}
 .aside .nav-toggler span::after{
     content: '';
     height: 2px;
@@ -205,6 +215,10 @@ ul{
     position: absolute;
     top: 6px;
     left: 0;
+}
+.aside .nav-toggler.open span::after{
+    transform: rotate(-45deg);
+    top: 0;
 }
 .aside .nav{
     margin-top: 50px;
@@ -622,6 +636,9 @@ h3.my-profession{
 
 /* Responsive */
 @media (max-width: 1199px){
+    .section .container{
+        padding-top: 70px;
+    }
     .aside{
         left: -270px;
     }
@@ -632,6 +649,14 @@ h3.my-profession{
         display: flex;
         left: 30px;
     }
+    .aside .nav-toggler.open{
+        left: 300px;
+    }
+    .section{
+        margin-left: 0;
+    }
+    .section.open{
+        margin-left: 270px;
     }
     .about .about-content .personal-info .info-item p span{
         display: block;
