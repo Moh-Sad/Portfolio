@@ -12,6 +12,33 @@ const nav = document.querySelector(".nav"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll('.section'),
     totalSection = allSection.length;
+
+// Function to update active nav item based on visible section
+function updateActiveNav() {
+    let currentSection = '';
+    
+    allSection.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= (sectionTop - 300) && window.scrollY < (sectionTop + sectionHeight - 300)) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    navList.forEach(li => {
+        const a = li.querySelector('a');
+        a.classList.remove('active');
+        if (a.getAttribute('href').split('#')[1] === currentSection) {
+            a.classList.add('active');
+        }
+    });
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updateActiveNav);
+
+// Original click functionality remains
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector('a');
     a.addEventListener('click', function () {
@@ -25,6 +52,7 @@ for (let i = 0; i < totalNavList; i++) {
         }
     })
 }
+
 function showSection(element) {
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove('active');
@@ -32,15 +60,18 @@ function showSection(element) {
     const target = element.getAttribute('href').split('#')[1];
     document.querySelector('#' + target).classList.add('active');
 }
+
 const navTogglerBtn = document.querySelector('.nav-toggler'),
     aside = document.querySelector('.aside');
 navTogglerBtn.addEventListener('click', () => {
     asideSectionTogglerBtn();
 })
+
 function asideSectionTogglerBtn() {
     aside.classList.toggle('open');
     navTogglerBtn.classList.toggle('open');
 }
+
 // Calculate age based on birth date
 document.addEventListener('DOMContentLoaded', function () {
     const birthYear = 2002;
@@ -56,4 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         age--;
     }
     document.getElementById('age').textContent = age;
+    
+    // Initialize active section on page load
+    updateActiveNav();
 });
