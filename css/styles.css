@@ -550,7 +550,6 @@ h3.my-profession{
 .portfolio .portfolio-item{
     display: flex;
     flex-direction: column;
-    max-height: 500px;
     margin-bottom: 30px;
 }
 .portfolio .portfolio-item-inner{
