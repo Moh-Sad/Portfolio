@@ -91,3 +91,34 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize active section on page load
     updateActiveNav();
 });
+
+// Initialize EmailJS with your public key
+    (function() {
+        emailjs.init("o09xYFHEz1Pl454PR");
+    })();
+    
+    // Function to handle form submission
+    function sendEmail(e) {
+        e.preventDefault();
+        
+        const name = document.querySelector('input[placeholder="Name"]').value;
+        const email = document.querySelector('input[placeholder="Email"]').value;
+        const subject = document.querySelector('input[placeholder="Subject"]').value;
+        const message = document.querySelector('textarea[placeholder="Message"]').value;
+        
+        emailjs.send("service_z78yklj", "template_geziw1i", {
+            name: name,
+            email: email,
+            title: subject,
+            message: message
+        })
+        .then(function(response) {
+            alert("Message sent successfully!");
+            document.querySelector('.contact-form').reset();
+        }, function(error) {
+            alert("Failed to send message. Please try again later.");
+        });
+    }
+    
+    // Add event listener to the form
+    document.querySelector('.contact-form').addEventListener('submit', sendEmail);
