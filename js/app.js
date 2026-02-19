@@ -93,6 +93,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize active section on page load
   updateActiveNav();
+
+  // ===== Scroll Animations (Intersection Observer) =====
+  const scrollElements = document.querySelectorAll(
+    ".scroll-animate, .scroll-from-left, .scroll-from-right, .scroll-scale-in"
+  );
+
+  if (scrollElements.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    scrollElements.forEach((el) => observer.observe(el));
+  }
 });
 
 // Initialize EmailJS with your public key
