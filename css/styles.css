@@ -426,6 +426,20 @@ h3.my-profession {
     display: inline-block;
 }
 
+.profile-link {
+    color: #4dabf7;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+}
+
+.profile-link:hover {
+    color: #74c0fc;
+    text-decoration-color: #74c0fc;
+}
+
 .about .about-content .personal-info .buttons {
     margin-top: 30px;
 }
